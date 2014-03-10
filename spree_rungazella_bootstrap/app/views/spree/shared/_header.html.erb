@@ -2,14 +2,18 @@
 
   <header id="header" data-hook>
     <div class="container">
-        <figure id="logo" class="col-md-4" data-hook>
+        <figure id="logo" class="col-md-6" data-hook>
           <%= logo %>
         </figure>
-        <%= render :partial => 'spree/shared/nav_bar' %>
+        <%= render :partial => 'spree/shared/main_nav_bar' %>    
+        <!-- removed line below. Added above -->
+        <!--<%= render :partial => 'spree/shared/nav_bar' %> -->
     </div>
   </header>
+
+   <!-- remove the additional nav bar 
   <div class="container">
     <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-  </div>
+  </div> -->
 
 </div>

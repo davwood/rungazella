@@ -10,14 +10,26 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
     <%= render :partial => 'spree/shared/header' %>
+    
+    <% if current_page? root_path %>
+      <div class="banner">
+        <ul>
+            <li>This is a slide.</li>
+            <li>This is another slide.</li>
+            <li>This is a final slide.</li>
+        </ul>
+      </div>
 
-    <div class="banner">
-    <ul>
-        <li>This is a slide.</li>
-        <li>This is another slide.</li>
-        <li>This is a final slide.</li>
-    </ul>
-    </div>
+      <div class="review">
+        <div class="container">
+          <div class="col-sm-12">
+            <div>
+              Rungazella is awesome
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
 
     <div class="container">
 
@@ -25,9 +37,10 @@
 
         <%= breadcrumbs(@taxon) %>
 
-        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+        <!-- don't want the side bar -->
+        <!-- <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %> -->
 
-        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+        <div id="content" class="col-sm-12" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>

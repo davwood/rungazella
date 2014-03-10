@@ -11,7 +11,4 @@
 	overflow: auto; }
 .banner li { list-style: none; }
 
-.banner ul li { float: left; 
-	color: red; 
-	text-decoration: underline;
-	font-size: 20px;}
+.banner ul li { float: left; }
