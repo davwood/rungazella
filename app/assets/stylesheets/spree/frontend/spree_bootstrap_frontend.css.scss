@@ -1,29 +1,54 @@
 //Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
 
+@import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
+
 // over-ride variables here if needed.
 $icon-font-path: "../../bootstrap/";
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
+$brand-primary:         #428bca !default;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+
+$font-size-base:          15px;
+$headings-font-weight:    300;
 
 @import "bootstrap";
 
 // -- Spree Custom Header and Footer ---------------------
+#headerline {
+  background-color: rgba( 226, 89, 17, 1.0);
+  height: 8px;
+}
+
 #spree-header {
-  background: #1c5c92 asset-url('spree_header.jpg') center center;
-  background-size: cover;
   margin-bottom: $line-height-computed;
   #header {
-    background: rgba(9, 22, 33, 0.4);
+    background: #fff;
     padding: $line-height-computed 0;
   }
   #logo {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     img {
       width: 306px;
     }
   }
   .nav a {
-    color: #fff;
+    color: #000;
+    font-size: 17px;
     &:hover {
-      background:rgba(9, 22, 33, 0.4);
+      background: rgba( 226, 89, 17, 0.8);
     }
   }
   .navbar {
@@ -54,3 +79,8 @@ h1 {
   margin-bottom: 30px;
 }
 
+#navigation {
+  vertical-align: middle;
+}
+
+ 

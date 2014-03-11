@@ -5,6 +5,7 @@
 <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
   <head data-hook="inside_head">
+
     <%= render :partial => 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
@@ -12,11 +13,10 @@
     <%= render :partial => 'spree/shared/header' %>
     
     <% if current_page? root_path %>
-      <div class="banner">
-        <ul>
-            <li>This is a slide.</li>
-            <li>This is another slide.</li>
-            <li>This is a final slide.</li>
+      <div class="slider">
+        <ul class="bxslider">
+            <li><%= image_tag("gazella-slider-1.png")%></li>
+            <li><%= image_tag("gazella-slider-2.png")%></li>
         </ul>
       </div>
 
