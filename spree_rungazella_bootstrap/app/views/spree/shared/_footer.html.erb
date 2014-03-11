@@ -1,10 +1,31 @@
 <div id="spree-footer">
 	<div class="container">
 		<footer id="footer" class="row" data-hook>
-		  <div id="footer-left" class="col-md-6" data-hook>
-		    <p><%= Spree.t :powered_by  %>&nbsp;<%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
+		  <div id="footer-left" class="col-md-4" data-hook>
+		    <%= link_to(image_tag("twitter.png", size: "70x70"), "https://twitter.com/@rungazella" ) %>
+		    <%= link_to(image_tag("facebook.png", size: "70x70"), "https://www.facebook.com/RunGazella") %>
+		    <%= link_to(image_tag("pinterest.png", size: "70x70"), "http://www.pinterest.com/rungazella/") %>
 		  </div>
-		  <div id="footer-right" class="col-md-6" data-hook></div>
+
+		  <div id="footer-middle" class="col-md-4" data-hook>
+		  	<%= link_to(image_tag("gazella_text.png", height: "35"), "/") %>
+		  </div>
+		  <div id="footer-middle" class="col-md-1" data-hook>
+		  </div>
+
+		  <div id="footer-right" class="col-md-3" data-hook>
+		  	 <ul>
+		    	<li><%= link_to 'Size guide', '/content/size-guide' %></li>
+		    	<li><%= link_to 'Shipping & Taxes', '/content/shipping-taxes/' %></li>
+		    	<li><%= link_to 'Privacy Policy', '/content/privacy-policy/' %></li>
+		    	<li><%= link_to 'Terms & Conditions', '/content/terms-conditions/' %></li>
+		    </ul>
+		  </div>
+
+		  <div id="footer-bottom" class="col-md-12">
+		  	<p>Gazella Running Costumes ©2013. Powered by energy gels, good coffee and <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
+		  </div>
+
 		</footer>
 	</div>
 </div>

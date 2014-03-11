@@ -36,7 +36,7 @@ $headings-font-weight:    300;
   margin-bottom: $line-height-computed;
   #header {
     background: #fff;
-    padding: $line-height-computed 0;
+    padding: $line-height-computed 0px 0px 0px;
   }
   #logo {
     margin-bottom: 5px;
@@ -83,4 +83,36 @@ h1 {
   vertical-align: middle;
 }
 
+// ----for the footer --------------
+
+footer {
+  font-size: 0.9em;
+  color: #CCC;
+  text-align: center;
+
+  li {
+  list-style-type: none;
+  text-align: left;
+  }
+
+  li a {
  
+  color: #CCC; 
+  }
+  
+}
+
+#footer-bottom {
+  border-top: 1px solid #CCC;
+  p {
+  text-align: center; 
+  padding-top: 8px; 
+  font-size: 0.8em
+  }
+} 
+
+// ---- the product page ------------
+
+.panel {
+  margin-top: 21px;
+}
