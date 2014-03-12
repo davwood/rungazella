@@ -15,3 +15,22 @@ $(document).ready(function(){
   $('.bxslider').bxSlider();
   auto: true;
 });
+
+// from http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
+// jumps to anything with a href of # to the element with the same name
+// also works between pages! :)
+
+$(document).ready(function(){
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash,
+	    $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 800, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+});
