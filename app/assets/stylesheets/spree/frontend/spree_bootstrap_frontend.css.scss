@@ -111,12 +111,23 @@ footer {
   
 }
 
+#footer-middle img {
+  margin-top: 10px;
+}
+
+#footer-left img {
+  margin-left: 10px;
+}
+
 #footer-bottom {
   border-top: 1px solid #CCC;
   p {
   text-align: center; 
   padding-top: 8px; 
   font-size: 0.8em
+  }
+  a {
+  color: #09C;
   }
 } 
 
@@ -132,14 +143,23 @@ footer {
   }
 }
 
-//.product-body .info {
-//  color: black;
-//  margin-top: 10px;
-//}
-
 
 // ---- the product page ------------
 
 .panel {
   margin-top: 21px;
+}
+
+//#product-description {
+//  .well {
+//  border: 1px solid #475A5F;
+//  color: #475A5F;
+//  }
+//}
+
+// ----- ourstory -------------
+
+#dani-profile {
+  float:right;
+  margin: 5px 10px;
 }
