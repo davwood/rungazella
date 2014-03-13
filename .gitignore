@@ -19,3 +19,4 @@
 /public/spree
 /app/assets/images
 /vendor/assets/images/
+.env

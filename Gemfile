@@ -41,7 +41,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -54,3 +54,7 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 gem 'spree', '2.2.0'
 gem 'spree_rungazella_bootstrap', :path => "./spree_rungazella_bootstrap"
 gem 'kaminari-bootstrap', '~> 3.0.1'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.1.1"
