@@ -19,3 +19,4 @@
 /public/spree/products
 /config/initializers/spree.rb
 .env
+
