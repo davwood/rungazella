@@ -54,6 +54,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: rungazella_production
+  database: d3qr6o53lfkhdj
   pool: 5
   password:
