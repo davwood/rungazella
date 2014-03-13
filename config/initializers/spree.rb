@@ -10,10 +10,10 @@ Spree.config do |config|
   # Uncomment to override the default site name.
   config.site_name = "Gazella Running Costumes"
   config.logo = "store/rungazella.png"
-  config.use_s3 = true
-  config.s3_bucket = ENV['S3_BUCKET']
-  config.s3_access_key = ENV['S3_KEY']
-  config.s3_secret = ENV['S3_SECRET']
+  # config.use_s3 = true
+  # config.s3_bucket = ENV['S3_BUCKET']
+  # config.s3_access_key = ENV['S3_KEY']
+  # config.s3_secret = ENV['S3_SECRET']
 end
 
 Spree.user_class = "Spree::User"
