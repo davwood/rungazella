@@ -12,8 +12,9 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.bxslider').bxSlider();
-  auto: true;
+  $('.bxslider').bxSlider({
+ 	auto: true,
+  });
 });
 
 // from http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
@@ -29,7 +30,7 @@ $(document).ready(function(){
 
 	    $('html, body').stop().animate({
 	        'scrollTop': $target.offset().top
-	    }, 800, 'swing', function () {
+	    }, 500, 'swing', function () {
 	        window.location.hash = target;
 	    });
 	});

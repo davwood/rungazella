@@ -15,17 +15,63 @@
     <% if current_page? root_path %>
       <div class="slider">
         <ul class="bxslider">
-            <li><%= image_tag("gazella-slider-1.png")%></li>
-            <li><%= image_tag("gazella-slider-2.png")%></li>
+            <li><%= link_to(image_tag("gazella-slider-1.png"), "#products") %></li>
+            <li><%= link_to(image_tag("gazella-slider-2.png"), "#products") %></li>
         </ul>
       </div>
 
-      <div class="review">
+        
+      <div class="reviews">
+        <div id="line-break" class="col-md-12">
+              
+        </div>
         <div class="container">
-          <div class="col-sm-12">
-            <div>
-              Rungazella is awesome
+          <div class="row">
+              <div class="col-md-6">
+                <h2>Breathable and Comfortable</h2>
+                <br>
+                  <p>
+                    Run Gazella costumes are made of light-weight moisture wicking fabric.
+                  </p> 
+                  
+                  <p>
+                   This will keep you cool and comfortable and won't get in your way of having fun and looking good!
+                  </p>
+              </div>
+              <div id="review-image" class="col-md-6">
+                <%= image_tag("material_square.png") %>
+              </div>
             </div>
+        </div>
+        <div id="line-break" class="col-md-12">
+
+        </div>
+        <div class="container"> 
+          <div class="row">
+            <div id="review-image" class="col-md-6">
+             
+                <%= image_tag("alice_jump.png") %>
+              
+            </div>
+            <div class="col-md-6">
+              <h2>Have fun while you run</h2>
+              <br>
+              <p> 
+                These running costumes are all about having fun. Whether it's just .
+              </p>
+
+            </div>
+            <div class="col-md-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="product-header">
+        <div class="container">
+          <div class="col-md-12">
+            <h1>Our Range of Running Costumes</h1>
           </div>
         </div>
       </div>
