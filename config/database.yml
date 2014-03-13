@@ -54,6 +54,6 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: d3qr6o53lfkhdj
+  database: HEROKU_POSTGRESQL_PINK_URL
   pool: 5
   password:
