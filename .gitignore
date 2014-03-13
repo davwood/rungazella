@@ -16,7 +16,5 @@
 /tmp
 
 #others
-/public/spree
-/app/assets/images
-/vendor/assets/images/
+/public/spree/products
 .env
