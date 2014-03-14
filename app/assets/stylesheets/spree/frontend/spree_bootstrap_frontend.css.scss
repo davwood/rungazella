@@ -2,16 +2,7 @@
 
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: font-path('glyphicons-halflings-regular.eot');
-  src: font-path('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    font-path('glyphicons-halflings-regular.woff') format('woff'), 
-    font-path('glyphicons-halflings-regular.ttf') format('truetype'), 
-    font-path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
-
-// over-ride variables here if needed.
+// over-ride variables here if needed
 $icon-font-path: "/assets/bootstrap/";
 
 $gray-darker:            lighten(#000, 13.5%) !default; // #222
@@ -41,8 +32,14 @@ $panel-primary-text:          #fff !default;
 $panel-primary-border:        $brand-primary !default;
 $panel-primary-heading-bg:    $brand-primary !default;
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(asset_path('glyphicons-halflings-regular.eot'));
+  src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
+};
 
 @import "bootstrap";
+
 
 // -- Spree Custom Header and Footer ---------------------
 #headerline {
