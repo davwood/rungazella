@@ -2,6 +2,15 @@
 
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: font-path('glyphicons-halflings-regular.eot');
+  src: font-path('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    font-path('glyphicons-halflings-regular.woff') format('woff'), 
+    font-path('glyphicons-halflings-regular.ttf') format('truetype'), 
+    font-path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 // over-ride variables here if needed.
 $icon-font-path: "/assets/bootstrap/";
 
