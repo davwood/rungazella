@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/stefansenk/spree-blogging-spree.git
+  revision: 6926c1b43782ca5ea2bd783a58e2712196a1556b
+  branch: 2-2-stable
+  specs:
+    spree_blogging_spree (0.4.0)
+      acts-as-taggable-on (~> 2.4.1)
+      spree_core (~> 2.2.0)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 1ccd7048bf5595bcfd0ccdb7a8863c12fcf84991
   branch: 2-2-stable
@@ -20,13 +29,6 @@ GIT
   specs:
     spree_gateway (2.2.1)
       savon (~> 1.2)
-      spree_core (~> 2.2.0)
-
-PATH
-  remote: ./spree-blogging-spree
-  specs:
-    spree_blogging_spree (0.4.0)
-      acts-as-taggable-on (~> 2.4.1)
       spree_core (~> 2.2.0)
 
 PATH
