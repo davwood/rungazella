@@ -18,6 +18,8 @@ end
 
 Spree.user_class = "Spree::User"
 
+Spree::Image.attachment_definitions[:attachment][:path] = 'products/:id/:style/:basename.:extension'
+Spree::Image.attachment_definitions[:attachment][:url] = 'products/:id/:style/:basename.:extension'
 # think below is only if you are in europe..
 # Paperclip.interpolates(:s3_eu_url) do |attachment, style|
 # "#{attachment.s3_protocol}://#{Spree::Config[:s3_host_alias]}/#{attachment.bucket_name}/#{attachment.path(style).gsub(%r{^/},"")}"
