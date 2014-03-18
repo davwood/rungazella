@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-xs-2 col-md-1">
+		<span id="blog_date" class="bg-primary"><%= l(blog_entry.published_at, :format => "%b") %>
+		<span><%= l(blog_entry.published_at, :format => "%e") %></span>
+
+		</span>
+	</div>
+
+	<div class="col-xs-10 col-md-11">
+		<h2><%= link_to blog_entry.title, blog_entry_permalink(blog_entry) %></h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-1">
+	</div>
+
+	<div class="col-xs-12 col-md-11">
+	<div class="blog_entry">
+	  <%= blog_entry.body %>
+	  <!-- <span class="blog_read_more"><%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry) %></span> -->
+	</div>
+
+	<%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => blog_entry} %>
+	</div>
+</div>
