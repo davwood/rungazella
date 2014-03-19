@@ -64,14 +64,25 @@ Rungazella::Application.configure do
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_credentials => {
-    :bucket => ENV['S3_BUCKET_NAME'],
-    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  }
-}
+  attachment_config = {
+    s3_credentials: {
+      access_key_id: ENV["S3_KEY"],
+      secret_access_key: ENV["S3_SECRET"],
+      bucket: ENV["S3_BUCKET"],
+    },
+    storage:        :s3,
+    s3_headers:     { "Cache-Control" => "max-age=31557600" },
+    s3_protocol:    "https",
+    bucket:         ENV["S3_BUCKET"],
+    path:          ":rails_root/public/:class/:attachment/:id/:style/:basename.:extension",
+    default_url:   "/:class/:attachment/:id/:style/:basename.:extension",
+    default_style: "product",
+    }
+
+    attachment_config.each do |key, value|
+      Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+    end
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

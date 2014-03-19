@@ -5,22 +5,27 @@
 #
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
-Spree.config do |config|
-  # Example:
-  # Uncomment to override the default site name.
-  config.site_name = "Gazella Running Costumes"
-  config.logo = "store/rungazella.png"
-  # config.use_s3 = true
-  # config.s3_bucket = ENV['S3_BUCKET']
-  # config.s3_access_key = ENV['S3_KEY']
-  # config.s3_secret = ENV['S3_SECRET']
-end
 
 Spree.user_class = "Spree::User"
 
-Spree::Image.attachment_definitions[:attachment][:url] = ':s3_domain_url'
-Spree::Image.attachment_definitions[:attachment][:path] = 'products/:id/:style/:basename.:extension'
-# think below is only if you are in europe..
-# Paperclip.interpolates(:s3_eu_url) do |attachment, style|
-# "#{attachment.s3_protocol}://#{Spree::Config[:s3_host_alias]}/#{attachment.bucket_name}/#{attachment.path(style).gsub(%r{^/},"")}"
-# end
+Spree.config do |config|
+  	# Example:
+  	# Uncomment to override the default site name.
+  	config.site_name = "Gazella Running Costumes"
+  	config.logo = "store/rungazella.png"
+
+  	paperclip_config = {
+			styles: {
+			  mini:     "48x48>",
+			  small:    "100x100>",
+			  product:  "240x240>",
+			  large:    "600x600>"
+			}
+		}
+
+	paperclip_config.each do |key, value|
+		Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+	end
+end 
+ 	
+ 	
