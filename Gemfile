@@ -52,9 +52,15 @@ gem 'unicorn'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree', '2.2.0'
+
 gem 'spree_rungazella_bootstrap', :path => "./spree_rungazella_bootstrap"
-gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree', :branch => '2-2-stable'
 gem 'kaminari-bootstrap', '~> 3.0.1'
+
+#this is for the blog
+gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree', :branch => '2-2-stable'
+# this is to edit the text in the blog
+gem 'spree_editor', github: 'spree/spree_editor', :branch => '2-2-stable'
+
 
 gem 'rails_12factor', group: :production
 

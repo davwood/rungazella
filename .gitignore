@@ -17,5 +17,7 @@
 
 #others
 /public/spree/products
+/public/ckeditor_assets
+/public/assets/blog_entry_images
 .env
 

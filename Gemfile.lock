@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/spree/spree_editor.git
+  revision: 6be1124256bbaa3496472df70cae79fa547fd469
+  branch: 2-2-stable
+  specs:
+    spree_editor (2.2.0)
+      ckeditor
+      spree_backend (~> 2.2.0)
+      tinymce-rails (~> 3.5.8.3)
+
+GIT
   remote: git://github.com/stefansenk/spree-blogging-spree.git
   revision: 6926c1b43782ca5ea2bd783a58e2712196a1556b
   branch: 2-2-stable
@@ -107,6 +117,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    ckeditor (4.0.10)
+      mime-types
+      orm_adapter (~> 0.5.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
@@ -322,6 +335,8 @@ GEM
     thread_safe (0.2.0)
       atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
+    tinymce-rails (3.5.8.3)
+      railties (>= 3.1.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -368,6 +383,7 @@ DEPENDENCIES
   spree (= 2.2.0)
   spree_auth_devise!
   spree_blogging_spree!
+  spree_editor!
   spree_gateway!
   spree_rungazella_bootstrap!
   turbolinks
