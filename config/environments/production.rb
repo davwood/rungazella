@@ -27,7 +27,7 @@ Rungazella::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -63,8 +63,6 @@ Rungazella::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   config.assets.precompile += %w( .svg .eot .woff .ttf )
-
-  config.assets.compile = true
 
   config.assets.precompile += Ckeditor.assets
   config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
