@@ -13,7 +13,7 @@ Spree.config do |config|
   	config.logo = "store/rungazella.png"
 
  	#S3 configuration
- 	if Rails.env.production? do 
+ 	if Rails.env.production? then
 
  		#production. Store images on S3.
  		# development will default to local storage
@@ -42,4 +42,3 @@ Spree.config do |config|
  	
 end
 Spree.user_class = "Spree::User"
-end
