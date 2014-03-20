@@ -40,22 +40,6 @@ Spree.config do |config|
 
 	end
  	
- 	#paperclip image sizing config
-	 	sizing_config = {
-
-			styles: {
-			  mini:     "48x48>",
-			  small:    "100x100>",
-			  product:  "240x240>",
-			  large:    "600x600>"
-			}
-
-		}
-
-		sizing_config.each do |key, value|
-			Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
-		end
- 		
 end
 Spree.user_class = "Spree::User"
 end
