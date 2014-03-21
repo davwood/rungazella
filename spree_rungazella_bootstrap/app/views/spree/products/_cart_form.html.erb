@@ -3,14 +3,15 @@
 
     <% if @product.variants_and_option_values(current_currency).any? %>
       <div id="product-variants" class="col-md-6">
-        <h3 class="product-section-title"><%= Spree.t(:variants) %></h3>
+        <h3 class="product-section-title"><%= Spree.t(:size) %></h3>
         <ul class="list-group">
+
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
             <li>
               <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => display_price(variant) %>
               <%= label_tag "variant_id" do %>
                 <span class="variant-description">
-                  <%= variant_options variant %>
+                  <%= variant.option_values[0][:presentation] %>
                 </span>
                 <% if variant_price variant %>
                   <span class="price diff"><%= variant_price variant %></span>
