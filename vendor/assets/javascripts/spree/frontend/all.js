@@ -8,7 +8,7 @@
 //= require jquery_ujs
 
 //= require spree/frontend
-
+//= require spree/product_zoom
 //= require_tree .
 
 $(document).ready(function(){

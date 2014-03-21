@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/davwood/spree_product_zoom.git
+  revision: 78904f33805e76d454049ad28224dbcffbb69a05
+  specs:
+    spree_product_zoom (2.2)
+      spree_core (~> 2.2.0.beta)
+
+GIT
   remote: git://github.com/spree/spree_editor.git
   revision: 6be1124256bbaa3496472df70cae79fa547fd469
   branch: 2-2-stable
@@ -7,6 +14,15 @@ GIT
       ckeditor
       spree_backend (~> 2.2.0)
       tinymce-rails (~> 3.5.8.3)
+
+GIT
+  remote: git://github.com/spree/spree_print_invoice.git
+  revision: 8459347f217c094b358aed6f1f6afacda738ae28
+  branch: 2-2-stable
+  specs:
+    spree_print_invoice (2.0.0)
+      prawn (= 1.0.0)
+      spree_core (~> 2.2.0.beta)
 
 GIT
   remote: git://github.com/stefansenk/spree-blogging-spree.git
@@ -200,10 +216,14 @@ GEM
       mime-types
     paranoia (2.0.2)
       activerecord (~> 4.0)
+    pdf-core (0.2.5)
     pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.4)
+    prawn (1.0.0)
+      pdf-core (~> 0.2.2)
+      ttfunk (~> 1.1.1)
     rabl (0.9.3)
       activesupport (>= 2.3.14)
     rack (1.5.2)
@@ -341,6 +361,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.9.2)
+    ttfunk (1.1.1)
     turbolinks (2.2.1)
       coffee-rails
     tzinfo (0.3.38)
@@ -385,6 +406,8 @@ DEPENDENCIES
   spree_blogging_spree!
   spree_editor!
   spree_gateway!
+  spree_print_invoice!
+  spree_product_zoom!
   spree_rungazella_bootstrap!
   turbolinks
   uglifier (>= 1.3.0)

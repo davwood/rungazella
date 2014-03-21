@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320184257) do
+ActiveRecord::Schema.define(version: 20140321015130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -267,6 +267,8 @@ ActiveRecord::Schema.define(version: 20140320184257) do
     t.datetime "approved_at"
     t.boolean  "confirmation_delivered",                                     default: false
     t.boolean  "considered_risky",                                           default: false
+    t.integer  "invoice_number"
+    t.date     "invoice_date"
   end
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at", using: :btree

@@ -5,7 +5,8 @@
  *
 
  *= require spree/frontend
-
+ *= require spree/product_zoom
  *= require_self
  *= require_tree .
+ 
 */

@@ -1,0 +1,1 @@
+Spree::PrintInvoice::Config.set(:print_invoice_logo_path => "store/rungazella_invoice.png")
