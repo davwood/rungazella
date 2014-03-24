@@ -11,11 +11,11 @@
               <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => display_price(variant) %>
               <%= label_tag "variant_id" do %>
                 <span class="variant-description">
-                  <%= variant.option_values[0][:presentation] %>
+                  <%= variant.option_values[1][:presentation] %>
                 </span>
-               <!--  <% if variant_price variant %>
+                <% if variant_price variant %>
                   <span class="price diff"><%= variant_price variant %></span>
-                <% end %> -->
+                <% end %>
               <% end %>
             </li>
           <% end%>
