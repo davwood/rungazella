@@ -16,6 +16,7 @@ Ckeditor.setup do |config|
 
   config.authorize_with :cancan, Spree::Ability
   
+  
   # Setup authorization to be run as a before filter
   # config.authorize_with :cancan
 
