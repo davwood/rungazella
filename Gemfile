@@ -59,7 +59,7 @@ gem 'spree_rungazella_bootstrap', :path => "./spree_rungazella_bootstrap"
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 #this is for the blog
-gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree', :branch => '2-2-stable'
+gem 'spree_blogging_spree', github: 'davwood/spree-blogging-spree', :branch => '2-2-stable'
 # this is to edit the text in the blog
 gem 'spree_editor', github: 'spree/spree_editor', :branch => '2-2-stable'
 

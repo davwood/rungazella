@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/davwood/spree-blogging-spree.git
+  revision: 3f33e98e6795b2cb8e312c65ad52027d021dce36
+  branch: 2-2-stable
+  specs:
+    spree_blogging_spree (0.4.0)
+      acts-as-taggable-on (~> 2.4.1)
+      spree_core (~> 2.2.0)
+
+GIT
   remote: git://github.com/davwood/spree_product_zoom.git
   revision: 78904f33805e76d454049ad28224dbcffbb69a05
   specs:
@@ -23,15 +32,6 @@ GIT
     spree_print_invoice (2.0.0)
       prawn (= 1.0.0)
       spree_core (~> 2.2.0.beta)
-
-GIT
-  remote: git://github.com/stefansenk/spree-blogging-spree.git
-  revision: 6926c1b43782ca5ea2bd783a58e2712196a1556b
-  branch: 2-2-stable
-  specs:
-    spree_blogging_spree (0.4.0)
-      acts-as-taggable-on (~> 2.4.1)
-      spree_core (~> 2.2.0)
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
