@@ -15,9 +15,17 @@
   <h6 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h6>
 <% end %>
 
+<% packages = products.select do |product| product.taxons.any? {|taxon| taxon.name == "Packages" || taxon.name == "T-Shirts"} %>
+<% end %>
+<% racelegs = products.select do |product| product.taxons.any? {|taxon| taxon.name == "Race Legs"} %>
+<% end %>
+<% individual = products.select do |product| product.taxons.any? {|taxon| taxon.name == "Individual-Pieces"} %>
+<% end %>
+
 <% if products.any? %>
 <div id="products" class="row" data-hook>
-  <% products.each do |product| %>
+  <h3>Running Costume Packages</h3>
+  <% packages.each do |product| %>
     <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
       <div class="panel panel-primary">
         <div class="panel-body text-center product-body">
@@ -31,6 +39,41 @@
       </div>
     </div>
   <% end %>
+</div>
+<div id="race-legs" class="row" data-hook>
+  <h3>Race Legs</h3>
+  <% racelegs.each do |product| %>
+    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+      <div class="panel panel-primary">
+        <div class="panel-body text-center product-body">
+          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
+          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+        </div>
+        <div id="products-price" class="panel-footer text-center">
+          <span class="price selling lead" itemprop="price">
+            <%= link_to display_price(product), product %></span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="individuals" class="row" data-hook>
+  <h3>Running Costume Pieces also sold separately</h3>
+  <% individual.each do |product| %>
+    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+      <div class="panel panel-primary">
+        <div class="panel-body text-center product-body">
+          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
+          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+        </div>
+        <div id="products-price" class="panel-footer text-center">
+          <span class="price selling lead" itemprop="price">
+            <%= link_to display_price(product), product %></span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <% reset_cycle("classes") %>
 </div>
 <% end %>
