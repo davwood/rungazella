@@ -23,59 +23,64 @@
 <% end %>
 
 <% if products.any? %>
-<div id="products" class="row" data-hook>
-  <h3>Running Costume Packages</h3>
-  <% packages.each do |product| %>
-    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-      <div class="panel panel-primary">
-        <div class="panel-body text-center product-body">
-          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
-          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+  <% if packages.any? %>
+    <div id="products" class="row" data-hook>
+      <h3>Running Costume Packages</h3>
+      <% packages.each do |product| %>
+        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+          <div class="panel panel-primary">
+            <div class="panel-body text-center product-body">
+              <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
+              <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+            </div>
+            <div id="products-price" class="panel-footer text-center">
+              <span class="price selling lead" itemprop="price">
+                <%= link_to display_price(product), product %></span>
+            </div>
+          </div>
         </div>
-        <div id="products-price" class="panel-footer text-center">
-          <span class="price selling lead" itemprop="price">
-            <%= link_to display_price(product), product %></span>
-        </div>
-      </div>
+      <% end %>
     </div>
   <% end %>
-</div>
-<div id="race-legs" class="row" data-hook>
-  <h3>Race Legs</h3>
-  <% racelegs.each do |product| %>
-    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-      <div class="panel panel-primary">
-        <div class="panel-body text-center product-body">
-          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
-          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+  <% if racelegs.any? %>
+    <div id="products" class="row" data-hook>
+      <h3>Race Legs</h3>
+      <% racelegs.each do |product| %>
+        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+          <div class="panel panel-primary">
+            <div class="panel-body text-center product-body">
+              <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
+              <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+            </div>
+            <div id="products-price" class="panel-footer text-center">
+              <span class="price selling lead" itemprop="price">
+                <%= link_to display_price(product), product %></span>
+            </div>
+          </div>
         </div>
-        <div id="products-price" class="panel-footer text-center">
-          <span class="price selling lead" itemprop="price">
-            <%= link_to display_price(product), product %></span>
-        </div>
-      </div>
+      <% end %>
     </div>
   <% end %>
-</div>
-<div id="individuals" class="row" data-hook>
-  <h3>Running Costume Pieces also sold separately</h3>
-  <% individual.each do |product| %>
-    <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-      <div class="panel panel-primary">
-        <div class="panel-body text-center product-body">
-          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
-          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+  <% if individual.any? %>
+    <div id="products" class="row" data-hook>
+      <h3>Running Costume Pieces also sold separately</h3>
+      <% individual.each do |product| %>
+        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+          <div class="panel panel-primary">
+            <div class="panel-body text-center product-body">
+              <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
+              <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+            </div>
+            <div id="products-price" class="panel-footer text-center">
+              <span class="price selling lead" itemprop="price">
+                <%= link_to display_price(product), product %></span>
+            </div>
+          </div>
         </div>
-        <div id="products-price" class="panel-footer text-center">
-          <span class="price selling lead" itemprop="price">
-            <%= link_to display_price(product), product %></span>
-        </div>
-      </div>
+      <% end %>
     </div>
   <% end %>
-
-  <% reset_cycle("classes") %>
-</div>
+    <% reset_cycle("classes") %>
 <% end %>
 
 <% if paginated_products.respond_to?(:num_pages) %>
