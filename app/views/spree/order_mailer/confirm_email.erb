@@ -2,32 +2,134 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <STYLE TYPE=3D"text/css">
+    A {
+    text-decoration: none;
+    }
+
+    A:link {
+        color:           #3366cc;
+        text-decoration: none;
+    }
+
+    A:visited {
+        color:           #663399;
+        text-decoration: none;
+    }
+
+    A:active {
+        color:           #cccccc;
+        text-decoration: none;
+    }
+
+    A:Hover  {
+        text-decoration: underline;
+    }
+
+    BODY, TD, CENTER, P {
+    font-family: Geneva, Verdana, Arial, Helvetica;
+    font-size:   10px;
+    color:       #333333;
+    }
+
+    .body {
+        font-family: Geneva, Verdana, Arial, Helvetica;
+        font-size:   10px;
+        color:       #333333;
+    }
+
+    </STYLE>
   </head>
   <body>
-    <h1>Your Run Gazella Order</h1>
-    <p>
-    	<%= Spree.t('order_mailer.confirm_email.dear_customer') %>
+    <TABLE BORDER=3D"0" CELLSPACING=3D"0" CELLPADDING=3D"0">
+      <table>
+        <tr>
+          <td><B>Gazella Running Costumes</B></td>
+          <td></td>
+          <td><B>Order Summary</B></td>
+        </tr>
+        <tr>
+         <td COLSPAN=3D"2"><img width=3D"500" height=3D"1" border=3D"0" src=
+  =3D"http://r.mzstatic.com/email/images_shared/spacer_999999.gif" /></td>
+        </tr>
+        <tr>
+          <td><B>Billed to:</B></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <%= @order.bill_address.full_name %>
+          <td></td>
+          <td>Order ID: <%= @order.invoice_number %></td>
+        </tr>
+        <tr>
+          <td><%= @order.bill_address.address1 %></td>
+          <td></td>
+          <td>Issue Date: <%= @order.created_at %></td>
+        </tr>
+        <tr>
+          <td><%= @order.bill_address.address2 %></td>
+          <td></td>
+          <td>Order Total: <%= @order.display_total %></td>
+        </tr>
+        <tr>
+          <td><%= @order.bill_address.city %></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= @order.bill_address.state_text %></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= @order.bill_address.zipcode %> </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= @order.bill_address.country %></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </TABLE>
+
       	<br>
     </p>
-    <h2>
-    	<%= Spree.t('order_mailer.confirm_email.order_summary') %>
-    </h2>
-    <p>
-    	<% @order.line_items.each do |item| %>
-  			<strong><%= raw(item.variant.product.name) %></strong>
-  			<span><%= raw(item.variant.options_text) -%> (<%=item.quantity%>) @ <%= item.single_money %> = <strong><%= item.display_amount %></strong></span>
-  			<br>
-		<% end %>
 
-		<%= Spree.t('order_mailer.confirm_email.subtotal', :subtotal => @order.display_item_total) %>
+    <TABLE>
+      <tr>
+        <td><B>Item</B></td> 
+        <td><B>Size</B></td> 
+        <td><B>Quantity</B></td> 
+        <td><B>Amount</B></td> 
+      </tr>
+      <% @order.line_items.each do |item| %>
+      <tr>
+        <td><%= raw(item.variant.product.name) %></td>
+        <td> </td>
+        <td> <%=item.quantity%> </td>
+        <td> <%= item.display_amount %> </td>
+      </tr>
+      <% end %>
+      <tr>
+        <td><%= Spree.t('order_mailer.confirm_email.subtotal', :subtotal => @order.display_item_total) %></td>
+      </tr>
+      
+      <% @order.adjustments.eligible.each do |adjustment| %>  
+      <tr>
+        <td><%= raw(adjustment.label) %> <%= adjustment.display_amount %> </td>
+      </tr>
+      <% end %>
 
-		<% @order.adjustments.eligible.each do |adjustment| %>
-  			<%= raw(adjustment.label) %> <%= adjustment.display_amount %>
-		<% end %>
+      <tr>
+        <td><%= Spree.t('order_mailer.confirm_email.total', :total => @order.display_total) %></tr>
+      </tr>
+    </TABLE>
 
-		<%= Spree.t('order_mailer.confirm_email.total', :total => @order.display_total) %>
+    <p>If you have any questions or concerns. Please email us sales@rungazella.com.</p>
 
-		<%= Spree.t('order_mailer.confirm_email.thanks') %>
-    </p>
+		<p><%= Spree.t('order_mailer.confirm_email.thanks') %></p>
   </body>
 </html>
