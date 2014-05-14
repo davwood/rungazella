@@ -21,3 +21,38 @@
 
 en:
   hello: "Hello world"
+  spree:
+ 	order_mailer:
+      cancel_email:
+        dear_customer: Dear Customer,
+        instructions: Your order has been CANCELED.  Please retain this cancellation information for your records.
+        order_summary_canceled: Order Summary [CANCELED]
+        subject: Cancellation of Order
+        subtotal: ! 'Subtotal: %{subtotal}'
+        total: ! 'Order Total: %{total}'
+      confirm_email:
+        dear_customer: Dear Customer,
+        instructions: |
+        	Thanks for your order! 
+        	Please review and retain the following order information for your records.
+        order_summary: Order Summary
+        subject: Order Confirmation
+        subtotal: ! 'Subtotal: %{subtotal}'
+        thanks: |
+        	We will send you another email when your order is shipped.
+
+        	Thanks,
+        	Danielle
+        total: ! 'Order Total: %{total}'
+	shipped_email:
+        dear_customer: Dear Customer,
+        instructions: |
+        	We have some good news! 
+        	Your order has been shipped. You will be running in costume in no time.
+        shipment_summary: Shipment Summary
+        subject: Shipment Notification
+        thanks: |
+        	Thanks,
+        	Danielle
+        track_information: ! 'Tracking Information: %{tracking}'
+        track_link: ! 'Tracking Link: %{url}'
