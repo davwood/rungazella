@@ -41,10 +41,9 @@
     </STYLE>
   </head>
   <body>
-    <table style="border-bottom:0.7px solid black;">
+    <table style="border-bottom:1px solid black;">
       <tr>
-        <td style="color: #e25911; font-size: 12px"><B>Gazella Running Costumes</B></td>
-        <td></td>
+        <td WIDTH="250"style="color: #e25911; font-size: 12px"><B>Gazella Running Costumes</B></td>
         <td><B>Order Summary</B></td>
       </tr>
     </table>
@@ -53,37 +52,22 @@
       <tr>
         <td><B>Billed to:</B></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td><%= @order.bill_address.full_name %></td>
-        <td></td>
-        <td>Order ID: <%= @order.invoice_number %></td>
-      </tr>
-      <tr>
-        <td><%= @order.bill_address.address1 %></td>
-        <td></td>
-        <td>Issue Date: <%= @order.created_at %></td>
-      </tr>
-      <tr>
-        <td><%= @order.bill_address.address2 %></td>
-        <td></td>
-        <td>Order Total: <%= @order.display_total %></td>
-      </tr>
-      <tr>
-        <td><%= @order.bill_address.city %></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><%= @order.bill_address.state_text %> <%= @order.bill_address.zipcode %></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><%= @order.bill_address.country %></td>
-        <td></td>
-        <td></td>
+        <td WIDTH="250">
+          <%= @order.bill_address.full_name %><br>
+          <%= @order.bill_address.address1 %><br>
+          <% if @order.bill_address.address2 != "" %>
+            <%= @order.bill_address.address2 %><br>
+          <% end %>
+          <%= @order.bill_address.city %><br>
+          <%= @order.bill_address.state_text %> <%= @order.bill_address.zipcode %><br>
+          <%= @order.bill_address.country %>
+        </td>
+        <td>
+          Order Date: <%= @order.created_at.strftime("%b %d, %Y") %><br>
+          Order Total: <%= @order.display_total %><br>
+        </td>
       </tr>
     </table>
 
@@ -92,20 +76,23 @@
     <TABLE>
       <tr>
         <td><B>Item</B></td> 
-        <td><B>Size</B></td> 
-        <td><B>Quantity</B></td> 
+        <td ALIGN="center"><B>Size</B></td> 
+        <td ALIGN="center"><B>Quantity</B></td> 
         <td><B>Amount</B></td> 
       </tr>
       <% @order.line_items.each do |item| %>
       <tr>
         <td><%= raw(item.variant.product.name) %></td>
-        <td><%= raw(item.variant.options_text) %></td>
-        <td><%= item.quantity %></td>
+        <td ALIGN="center"><%= raw(item.variant.options_text) %></td>
+        <td ALIGN="center"><%= item.quantity %></td>
         <td><%= item.display_amount %></td>
       </tr>
       <% end %>
-      <br>
+      <tr style="border-bottom:1px solid black;">
+        <td></td>
+      </tr>
       <tr>
+        <td></td>
         <td><B>Subtotal</B></td>
         <td></td>
         <td><%= @order.display_item_total %></td>
@@ -114,12 +101,14 @@
       <% @order.adjustments.eligible.each do |adjustment| %>  
       <tr>
         <td></td>
+        <td></td>
         <td><%= raw(adjustment.label) %></td> 
         <td><%= adjustment.display_amount %> </td>
       </tr>
       <% end %>
 
       <tr>
+        <td></td>
         <td><B>TOTAL</B></td>
         <td></td>
         <td><%= @order.display_total %></td>
@@ -128,7 +117,7 @@
     <br>
     <p><%= Spree.t('order_mailer.confirm_email.lastline') %></p>
 
-    <p>If you have any questions or concerns. Please email us at sales@rungazella.com.</p>
+    <p>If you have any questions or concerns, please email us at sales@rungazella.com.</p>
 
 		<p><%= Spree.t('order_mailer.confirm_email.thanks') %></p>
 
