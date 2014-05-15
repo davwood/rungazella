@@ -13,7 +13,7 @@ Billed to:
 <%= @order.bill_address.country %>
 
 
-Order Date: <%= @order.created_at %>
+Order Date: <%= Time.now.strftime("%b %d, %Y") %>
 Order Total: <%= @order.display_total %>
 
 
@@ -35,6 +35,8 @@ Order Total: <%= @order.display_total %>
 <% @order.adjustments.eligible.each do |adjustment| %>
   <%= raw(adjustment.label) %> <%= adjustment.display_amount %>
 <% end %>
+
+<%= Spree.t('order_mailer.confirm_email.shiptotal', :shiptotal => @order.ship_total) %>
 
 <%= Spree.t('order_mailer.confirm_email.total', :total => @order.display_total) %>
 

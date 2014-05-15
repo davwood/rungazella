@@ -44,35 +44,33 @@
     <table style="border-bottom:1px solid black;">
       <tr>
         <td WIDTH="250"style="color: #e25911; font-size: 12px"><B>Gazella Running Costumes</B></td>
-        <td><B>Order Summary</B></td>
       </tr>
     </table>
-    <br>
+    <p><%= Spree.t('shipment_mailer.shipped_email.instructions') %></p>
     <table>
       <tr>
-        <td><B>Billed to:</B></td>
+        <td><B>Shipped to:</B></td>
         <td></td>
       </tr>
       <tr>
         <td WIDTH="250">
-          <%= @order.bill_address.full_name %><br>
-          <%= @order.bill_address.address1 %><br>
-          <% if @order.bill_address.address2 != "" %>
-            <%= @order.bill_address.address2 %><br>
+          <%= @shipment.address.full_name %><br>
+          <%= @shipment.address.address1 %><br>
+          <% if @shipment.address.address2 != "" %>
+            <%= @shipment.address.address2 %><br>
           <% end %>
-          <%= @order.bill_address.city %><br>
-          <%= @order.bill_address.state_text %> <%= @order.bill_address.zipcode %><br>
-          <%= @order.bill_address.country %>
+          <%= @shipment.address.city %><br>
+          <%= @shipment.address.state_text %> <%= @shipment.address.zipcode %><br>
+          <%= @shipment.address.country %>
         </td>
         <td>
-          Order Date: <%= Time.now.strftime("%b %d, %Y") %><br>
-          Order Total: <%= @order.display_total %><br>
         </td>
       </tr>
     </table>
 
       	<br>
 
+    <p><%= Spree.t('shipment_mailer.shipped_email.shipment_summary') %></p>
     <TABLE>
       <tr>
         <td><B>Item</B></td> 
@@ -80,10 +78,11 @@
         <td ALIGN="center"><B>Quantity</B></td> 
         <td><B>Amount</B></td> 
       </tr>
-      <% @order.line_items.each do |item| %>
+
+      <% @shipment.manifest.each do |item| %>
       <tr>
-        <td><%= raw(item.variant.product.name) %></td>
-        <td ALIGN="center"><%= raw(item.variant.options_text) %></td>
+        <td><%= item.variant.product.name %></td>
+        <td ALIGN="center"><%= item.variant.options_text %></td>
         <td ALIGN="center"><%= item.quantity %></td>
         <td><%= item.display_amount %></td>
       </tr>
@@ -95,37 +94,17 @@
         <td></td>
         <td><B>Subtotal</B></td>
         <td></td>
-        <td><%= @order.display_item_total %></td>
+        <td><%= @shipment.order.display_item_total %></td>
       </tr>
       
-      <% @order.adjustments.eligible.each do |adjustment| %>  
-      <tr>
-        <td></td>
-        <td></td>
-        <td><%= raw(adjustment.label) %></td> 
-        <td><%= adjustment.display_amount %> </td>
-      </tr>
-      <% end %>
 
-      <tr>
-        <td></td>
-        <td><B>Shipping</B></td>
-        <td></td>
-        <td><%= @order.ship_total %></td>
-      <tr>
-        <td></td>
-        <td><B>TOTAL</B></td>
-        <td></td>
-        <td><%= @order.display_total %></td>
-      </tr>
-    </TABLE>
-    <br>
-    <p><%= Spree.t('order_mailer.confirm_email.lastline') %></p>
+    <p><%= Spree.t('shipment_mailer.shipped_email.track_information', :tracking => @shipment.tracking)     if @shipment.tracking %></p>
+	<p><%= Spree.t('shipment_mailer.shipped_email.track_link',        :url      => @shipment.tracking_url) if @shipment.tracking_url %></p>
 
     <p>If you have any questions or concerns, please email us at sales@rungazella.com.</p>
 
-		<p><%= Spree.t('order_mailer.confirm_email.thanks') %></p>
+	<p><%= Spree.t('shipment_mailer.shipped_email.thanks') %></p>
 
-    <p><%= Spree.t('order_mailer.confirm_email.thanksfrom') %></p>
+    <p><%= Spree.t('shipment_mailer.shipped_email.thanksfrom') %></p>
   </body>
 </html>
