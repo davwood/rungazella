@@ -7,32 +7,27 @@ en:
         order_summary_canceled: Order Summary [CANCELED]
         subject: Cancellation of Order
         subtotal: ! 'Subtotal: %{subtotal}'
+        thanks: Thanks, 
+        thanksfrom: Danielle
         total: ! 'Order Total: %{total}'
       confirm_email:
         dear_customer: Dear Customer,
-        instructions: |
-          Thanks for your order! 
-          Please review and retain the following order information for your records.
+        instructions: Thanks for your order! <br><br> Please review and retain the following order information for your records.
+        lastline: We will send you another email when your order is shipped. 
         order_summary: Order Summary
         subject: Order Confirmation
         subtotal: ! 'Subtotal: %{subtotal}'
-        thanks: |
-          We will send you another email when your order is shipped.
-
-          Thanks,
-          Danielle
+        thanks: Thanks, 
+        thanksfrom: Danielle
         total: ! 'Order Total: %{total}'
     shipment_mailer:
       shipped_email:
         dear_customer: Dear Customer,
-        instructions: |
-          We have some good news! 
-          Your order has been shipped. You will be running in your gazella costume in no time.
+        instructions: We have some good news! <br><br> Your order has been shipped. You will be running in your gazella costume in no time.
         shipment_summary: Shipment Summary
         subject: Shipment Notification
-        thanks: |
-          Thanks,
-          Danielle
+        thanks: Thanks,
+        thanksfrom: Danielle
         track_information: ! 'Tracking Information: %{tracking}'
         track_link: ! 'Tracking Link: %{url}'
     
