@@ -75,10 +75,10 @@
 
     <TABLE>
       <tr>
-        <td><B>Item</B></td> 
-        <td ALIGN="center"><B>Size</B></td> 
-        <td ALIGN="center"><B>Quantity</B></td> 
-        <td><B>Amount</B></td> 
+        <td><B>Item</B></td>
+        <td ALIGN="center"><B>Size</B></td>
+        <td ALIGN="center"><B>Quantity</B></td>
+        <td><B>Amount</B></td>
       </tr>
       <% @order.line_items.each do |item| %>
       <tr>
@@ -97,13 +97,13 @@
         <td></td>
         <td><%= @order.display_item_total %></td>
       </tr>
-      
-      <% @order.adjustments.eligible.each do |adjustment| %>  
+
+      <% if @order.adjustment_total != 0 %>
       <tr>
         <td></td>
+        <td>Adjustments</td>
         <td></td>
-        <td><%= raw(adjustment.label) %></td> 
-        <td><%= adjustment.display_amount %> </td>
+        <td><%= @order.display_adjustment_total %> </td>
       </tr>
       <% end %>
 
@@ -111,7 +111,7 @@
         <td></td>
         <td><B>Shipping</B></td>
         <td></td>
-        <td><%= @order.ship_total %></td>
+        <td><%= @order.display_ship_total %></td>
       <tr>
         <td></td>
         <td><B>TOTAL</B></td>
