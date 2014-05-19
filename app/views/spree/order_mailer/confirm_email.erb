@@ -83,7 +83,7 @@
       <% @order.line_items.each do |item| %>
       <tr>
         <td><%= raw(item.variant.product.name) %></td>
-        <td ALIGN="center"><%= raw(item.variant.options_value) %></td>
+        <td ALIGN="center"><%= raw(item.variant.name) %></td>
         <td ALIGN="center"><%= item.quantity %></td>
         <td><%= item.display_amount %></td>
       </tr>

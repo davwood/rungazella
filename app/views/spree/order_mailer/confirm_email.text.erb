@@ -26,7 +26,7 @@ Order Total: <%= @order.display_total %>
 ============================================================
 
 <% @order.line_items.each do |item| %>
-  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> (<%=item.quantity%>) @ <%= item.single_money %> = <%= item.display_amount %>
+  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.name) -%> (<%=item.quantity%>) @ <%= item.single_money %> = <%= item.display_amount %>
 <% end %>
 
 ============================================================

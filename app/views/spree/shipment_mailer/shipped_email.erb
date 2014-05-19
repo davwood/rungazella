@@ -82,7 +82,7 @@
       <% @shipment.manifest.each do |item| %>
       <tr>
         <td><%= item.variant.product.name %></td>
-        <td ALIGN="center"><%= item.variant.options_value %></td>
+        <td ALIGN="center"><%= item.variant.name %></td>
         <td ALIGN="center"><%= item.quantity %></td>
         <td><%= item.display_amount %></td>
       </tr>
