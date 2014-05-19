@@ -83,7 +83,7 @@
       <% @order.line_items.each do |item| %>
       <tr>
         <td><%= raw(item.variant.product.name) %></td>
-        <td ALIGN="center"><%= raw(item.variant.options_text) %></td>
+        <td ALIGN="center"><%= raw(item.variant.options_value) %></td>
         <td ALIGN="center"><%= item.quantity %></td>
         <td><%= item.display_amount %></td>
       </tr>
@@ -95,7 +95,11 @@
         <td></td>
         <td><B>Subtotal</B></td>
         <td></td>
+        <% if @order.display_item_total == 0 %>
+        <td>FREE!</td>
+        <% else %>
         <td><%= @order.display_item_total %></td>
+        <% end %>
       </tr>
 
       <% if @order.adjustment_total != 0 %>
