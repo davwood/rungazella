@@ -88,9 +88,6 @@
         <td><%= item.display_amount %></td>
       </tr>
       <% end %>
-      <tr style="border-bottom:1px solid black;">
-        <td></td>
-      </tr>
       <tr>
         <td></td>
         <td><B>Subtotal</B></td>
@@ -111,11 +108,13 @@
         <td></td>
         <td><B>Shipping</B></td>
         <td></td>
-        <% if @order.ship_total == 0 %>
-        <td>FREE!</td>
-        <% else %>
+        <% if @order.ship_total > 0 %>
         <td><%= @order.ship_total %></td>
+        <% else %>
+        <td>FREE!</td>
         <% end %>
+      </tr>
+      
       <tr>
         <td></td>
         <td><B>TOTAL</B></td>
