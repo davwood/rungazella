@@ -92,11 +92,7 @@
         <td></td>
         <td><B>Subtotal</B></td>
         <td></td>
-        <% if @order.display_item_total == 0 %>
-        <td>FREE!</td>
-        <% else %>
         <td><%= @order.display_item_total %></td>
-        <% end %>
       </tr>
 
       <% if @order.adjustment_total != 0 %>
@@ -113,7 +109,7 @@
         <td><B>Shipping</B></td>
         <td></td>
         <% if @order.ship_total > 0 %>
-        <td><%= @order.display_total %></td>
+        <td><%= @order.display_ship_total %></td>
         <% else %>
         <td>FREE!</td>
         <% end %>
