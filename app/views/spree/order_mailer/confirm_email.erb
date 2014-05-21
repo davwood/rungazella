@@ -111,7 +111,11 @@
         <td></td>
         <td><B>Shipping</B></td>
         <td></td>
+        <% if @order.ship_total == 0 %>
+        <td>FREE!</td>
+        <% else %>
         <td><%= @order.ship_total %></td>
+        <% end %>
       <tr>
         <td></td>
         <td><B>TOTAL</B></td>
