@@ -75,10 +75,10 @@
 
     <TABLE>
       <tr>
-        <td><B>Item</B></td> 
-        <td ALIGN="center"><B>Size</B></td> 
-        <td ALIGN="center"><B>Quantity</B></td> 
-        <td><B>Amount</B></td> 
+        <td><B>Item</B></td>
+        <td ALIGN="center"><B>Size</B></td>
+        <td ALIGN="center"><B>Quantity</B></td>
+        <td><B>Amount</B></td>
       </tr>
       <% @order.line_items.each do |item| %>
       <tr>
@@ -92,15 +92,19 @@
         <td></td>
         <td><B>Subtotal</B></td>
         <td></td>
+        <% if @order.display_item_total == 0 %>
+        <td>FREE!</td>
+        <% else %>
         <td><%= @order.display_item_total %></td>
+        <% end %>
       </tr>
-      
-      <% @order.adjustments.eligible.each do |adjustment| %>  
+
+      <% if @order.adjustment_total != 0 %>
       <tr>
         <td></td>
+        <td>Adjustments</td>
         <td></td>
-        <td><%= raw(adjustment.label) %></td> 
-        <td><%= adjustment.display_amount %> </td>
+        <td><%= @order.display_adjustment_total %> </td>
       </tr>
       <% end %>
 
@@ -109,7 +113,7 @@
         <td><B>Shipping</B></td>
         <td></td>
         <% if @order.ship_total > 0 %>
-        <td><%= @order.ship_total %></td>
+        <td><%= @order.display_total %></td>
         <% else %>
         <td>FREE!</td>
         <% end %>
