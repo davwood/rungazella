@@ -68,3 +68,5 @@ Spree.config do |config|
 end
 Spree.user_class = "Spree::User"
 
+Spree::Auth::Config[:registration_step] = false;
+
