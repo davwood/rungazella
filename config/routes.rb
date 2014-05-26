@@ -60,4 +60,8 @@ Rungazella::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :sitemaps, :only => :show
+  get "sitemap" => "sitemaps#show"
+
 end

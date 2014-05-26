@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/davwood/sitemap_generator.git
+  revision: 7a2ecfcb1403fa1bd5020288f5097001504f03b6
+  specs:
+    sitemap_generator (5.0.4)
+      builder
+
+GIT
   remote: git://github.com/davwood/spree-blogging-spree.git
   revision: 3f33e98e6795b2cb8e312c65ad52027d021dce36
   branch: 2-2-stable
@@ -401,6 +408,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0)
   sdoc
+  sitemap_generator!
   spree (= 2.2.0)
   spree_auth_devise!
   spree_blogging_spree!

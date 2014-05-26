@@ -4,6 +4,7 @@
 # User-agent: *
 # Disallow: /
 User-agent: *
+Sitemap: http://rungazella.com/sitemap.xml.gz
 Disallow: /checkout
 Disallow: /cart
 Disallow: /orders

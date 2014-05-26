@@ -69,4 +69,6 @@ gem 'spree_product_zoom', github: "davwood/spree_product_zoom"
 
 gem 'rails_12factor', group: :production
 
+gem 'sitemap_generator', github: "davwood/sitemap_generator"
+
 ruby "2.1.1"
