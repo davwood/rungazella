@@ -31,7 +31,7 @@ module Rungazella
     # -- all .rb files in that directory are automatically loaded.
     
     #entered as per the spree documentation
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
 
     #add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
