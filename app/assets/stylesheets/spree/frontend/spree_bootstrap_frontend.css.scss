@@ -207,3 +207,11 @@ footer {
   color: white;
   margin-top: 35px; 
 }
+
+// ---- checkout section ----
+
+// hide the stripe payment method
+
+#payment-method-fields {
+  display: none;
+}
