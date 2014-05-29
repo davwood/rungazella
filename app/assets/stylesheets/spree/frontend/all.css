@@ -7,7 +7,7 @@
 *= require_self
 *= require spree/product_zoom
 *= require spree/frontend/spree_bootstrap_frontend
-*= require animate
+*= require spree/frontend/animate
 *= require_tree .
 */
 
