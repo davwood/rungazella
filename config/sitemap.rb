@@ -3,7 +3,7 @@ require 'sitemap_generator'
 
 SitemapGenerator::Sitemap.default_host = 'http://rungazella.com'
 SitemapGenerator::Sitemap.create do
-  	add '/home', :changefreq => 'daily', :priority => 0.9
+  	add '/', :changefreq => 'daily', :priority => 0.9
   	add '/#products', :changefreq => 'weekly'
   	add '/products', :changefreq => 'weekly'
   	add '/products/alice-in-wonderland-inspired-running-costume', :changefreq => 'weekly'
