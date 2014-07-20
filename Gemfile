@@ -71,4 +71,9 @@ gem 'rails_12factor', group: :production
 
 gem 'sitemap_generator', github: "davwood/sitemap_generator"
 
-ruby "2.1.1"
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
+
+ruby "2.1.2"
