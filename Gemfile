@@ -7,7 +7,7 @@ gem 'rails', '4.0.3'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -35,6 +35,8 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'capybara'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Use ActiveModel has_secure_password
@@ -55,7 +57,7 @@ gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :bran
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree', '2.2.0'
 
-gem 'spree_rungazella_bootstrap', :path => "./spree_rungazella_bootstrap"
+gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-2-stable'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 #this is for the blog
