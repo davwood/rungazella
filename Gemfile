@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.8'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -37,13 +37,14 @@ group :development, :test do
   gem 'capybara'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'dotenv', '~> 0.11.1'
 end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', '~> 4.8.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -53,15 +54,14 @@ gem 'unicorn'
 
 
 
+gem 'spree', github: 'spree/spree', branch: '2-2-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
-gem 'spree', '2.2.0'
 
 gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-2-stable'
-gem 'kaminari-bootstrap', '~> 3.0.1'
 
 #this is for the blog
-gem 'spree_blogging_spree', github: 'davwood/spree-blogging-spree', :branch => '2-2-stable'
+gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree', :branch => '2-2-stable'
 # this is to edit the text in the blog
 gem 'spree_editor', github: 'spree/spree_editor', :branch => '2-2-stable'
 
