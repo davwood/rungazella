@@ -41,31 +41,32 @@ Spree.config do |config|
 			Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
 		end
 
-	# elsif Rails.env.development? then 
+	elsif Rails.env.development? then 
 
-	# 	attachment_config = {
-	# 	s3_credentials: {
-	# 	  access_key_id: ENV["S3_KEY"],
-	# 	  secret_access_key: ENV["S3_SECRET"],
-	# 	  bucket: "rungazella-dev",
-	# 	},
+		attachment_config = {
+		s3_credentials: {
+		  access_key_id: ENV["S3_KEY"],
+		  secret_access_key: ENV["S3_SECRET"],
+		  bucket: "rungazella-dev",
+		},
 
-	# 	storage:        :s3,
-	# 	s3_headers:     { "Cache-Control" => "max-age=31557600" },
-	# 	s3_protocol:    "https",
-	# 	bucket:         "rungazella-dev",
+		storage:        :s3,
+		s3_headers:     { "Cache-Control" => "max-age=31557600" },
+		s3_protocol:    "https",
+		bucket:         "rungazella-dev",
 
-	# 	path:          "/:class/:attachment/:id/:style/:basename.:extension",
-	# 	default_url:   "/:class/:attachment/:id/:style/:basename.:extension",
-	# 	default_style: "product",
-	# 	}
+		path:          "/:class/:attachment/:id/:style/:basename.:extension",
+		default_url:   "/:class/:attachment/:id/:style/:basename.:extension",
+		default_style: "product",
+		}
 
-	# 	attachment_config.each do |key, value|
-	# 		Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
-	# 	end
+		attachment_config.each do |key, value|
+			Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+		end
 	end
  	
 end
+
 Spree.user_class = "Spree::User"
 
 Spree::Auth::Config[:registration_step] = false;
