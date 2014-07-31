@@ -68,42 +68,32 @@
       </tr>
     </table>
 
-      	<br>
+        <br>
 
-    <p><%= Spree.t('shipment_mailer.shipped_email.shipment_summary') %></p>
+    <p><B><%= Spree.t('shipment_mailer.shipped_email.shipment_summary') %></B></p>
     <TABLE>
       <tr>
         <td><B>Item</B></td>
         <td ALIGN="center"><B>Size</B></td>
         <td ALIGN="center"><B>Quantity</B></td>
-        <td><B>Amount</B></td>
       </tr>
 
       <% @shipment.manifest.each do |item| %>
       <tr>
         <td><%= item.variant.product.name %></td>
-        <td ALIGN="center"><%= raw(item.variant.options_text) %></td>
+        <td ALIGN="center"><%= item.variant.options_text %></td>
         <td ALIGN="center"><%= item.quantity %></td>
-        <td><%= item.display_amount %></td>
       </tr>
       <% end %>
-      <tr style="border-bottom:1px solid black;">
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><B>Subtotal</B></td>
-        <td></td>
-        <td><%= @shipment.order.display_item_total %></td>
-      </tr>
+    </TABLE>
 
 
     <p><%= Spree.t('shipment_mailer.shipped_email.track_information', :tracking => @shipment.tracking)     if @shipment.tracking %></p>
-	<p><%= Spree.t('shipment_mailer.shipped_email.track_link',        :url      => @shipment.tracking_url) if @shipment.tracking_url %></p>
+    <p><%= Spree.t('shipment_mailer.shipped_email.track_link',        :url      => @shipment.tracking_url) if @shipment.tracking_url %></p>
 
     <p>If you have any questions or concerns, please email us at sales@rungazella.com.</p>
 
-	<p><%= Spree.t('shipment_mailer.shipped_email.thanks') %></p>
+    <p><%= Spree.t('shipment_mailer.shipped_email.thanks') %></p>
 
     <p><%= Spree.t('shipment_mailer.shipped_email.thanksfrom') %></p>
   </body>
