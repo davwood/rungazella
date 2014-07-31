@@ -69,8 +69,6 @@ gem 'spree_print_invoice' , :git => 'git://github.com/spree/spree_print_invoice.
 
 gem 'spree_product_zoom', github: "davwood/spree_product_zoom"
 
-gem 'rails_12factor', group: :production
-
 gem 'sitemap_generator', github: "davwood/sitemap_generator"
 
 gem 'capistrano', '~> 3.1.0'
