@@ -54,20 +54,20 @@ gem 'unicorn', '~> 4.8.3'
 
 
 
-gem 'spree', github: 'spree/spree', branch: '2-1-stable'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
+gem 'spree', github: 'spree/spree', branch: '2-2-stable'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 
-gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-1-stable'
+gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-2-stable'
 
 #this is for the blog
-gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree', :branch => '2-1-stable'
+gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree', :branch => '2-2-stable'
 # this is to edit the text in the blog
-gem 'spree_editor', github: 'spree/spree_editor', :branch => '2-1-stable'
+gem 'spree_editor', github: 'spree/spree_editor', :branch => '2-2-stable'
 
-gem 'spree_print_invoice' , :git => 'git://github.com/spree/spree_print_invoice.git', :branch => '2-1-stable'
+gem 'spree_print_invoice' , :git => 'git://github.com/spree/spree_print_invoice.git', :branch => '2-2-stable'
 
-gem 'spree_product_zoom', :git => 'git://github.com/spree/spree_product_zoom.git', :branch => '2-1-stable'
+gem 'spree_product_zoom', :git => 'git://github.com/spree/spree_product_zoom.git', :branch => '2-2-stable'
 
 gem 'sitemap_generator', github: "davwood/sitemap_generator"
 
