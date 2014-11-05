@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321015130) do
+ActiveRecord::Schema.define(version: 20140821074049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,7 +145,12 @@ ActiveRecord::Schema.define(version: 20140321015130) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.integer  "user_id"
+    t.integer  "payment_method_id"
   end
+
+  add_index "spree_credit_cards", ["payment_method_id"], name: "index_spree_credit_cards_on_payment_method_id", using: :btree
+  add_index "spree_credit_cards", ["user_id"], name: "index_spree_credit_cards_on_user_id", using: :btree
 
   create_table "spree_gateways", force: true do |t|
     t.string   "type"
@@ -273,6 +278,7 @@ ActiveRecord::Schema.define(version: 20140321015130) do
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at", using: :btree
   add_index "spree_orders", ["number"], name: "index_spree_orders_on_number", using: :btree
+  add_index "spree_orders", ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id", using: :btree
   add_index "spree_orders", ["user_id"], name: "index_spree_orders_on_user_id", using: :btree
 
   create_table "spree_orders_promotions", id: false, force: true do |t|
@@ -318,7 +324,6 @@ ActiveRecord::Schema.define(version: 20140321015130) do
     t.string   "identifier"
     t.string   "cvv_response_code"
     t.string   "cvv_response_message"
-    t.decimal  "uncaptured_amount",    precision: 10, scale: 2, default: 0.0
   end
 
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id", using: :btree
@@ -406,11 +411,13 @@ ActiveRecord::Schema.define(version: 20140321015130) do
   end
 
   create_table "spree_promotion_actions", force: true do |t|
-    t.integer "promotion_id"
-    t.integer "position"
-    t.string  "type"
+    t.integer  "promotion_id"
+    t.integer  "position"
+    t.string   "type"
+    t.datetime "deleted_at"
   end
 
+  add_index "spree_promotion_actions", ["deleted_at"], name: "index_spree_promotion_actions_on_deleted_at", using: :btree
   add_index "spree_promotion_actions", ["id", "type"], name: "index_spree_promotion_actions_on_id_and_type", using: :btree
   add_index "spree_promotion_actions", ["promotion_id"], name: "index_spree_promotion_actions_on_promotion_id", using: :btree
 
@@ -496,7 +503,7 @@ ActiveRecord::Schema.define(version: 20140321015130) do
   create_table "spree_shipments", force: true do |t|
     t.string   "tracking"
     t.string   "number"
-    t.decimal  "cost",                 precision: 8,  scale: 2
+    t.decimal  "cost",                 precision: 10, scale: 2, default: 0.0
     t.datetime "shipped_at"
     t.integer  "order_id"
     t.integer  "address_id"
