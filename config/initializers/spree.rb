@@ -13,7 +13,7 @@ Spree.config do |config|
   	config.logo = "store/rungazella.png"
 
   	#initial setup
-  	config.allow_ssl_in_production = false
+  	config.allow_ssl_in_production = true
 
   	#S3 configuration
  	if Rails.env.production? then
@@ -41,7 +41,7 @@ Spree.config do |config|
 			Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
 		end
 
-	elsif Rails.env.development? then 
+	elsif Rails.env.development? then
 
 		attachment_config = {
 		s3_credentials: {
@@ -64,7 +64,7 @@ Spree.config do |config|
 			Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
 		end
 	end
- 	
+
 end
 
 Spree.user_class = "Spree::User"
@@ -72,4 +72,3 @@ Spree.user_class = "Spree::User"
 Spree::Auth::Config[:registration_step] = false;
 
 Spree::Config[:shipping_instructions] = true;
-
