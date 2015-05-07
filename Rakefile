@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rungazella::Application.load_tasks
+Rungazella::Application.load_tasks 
