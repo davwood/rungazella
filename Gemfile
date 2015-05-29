@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.8'
+gem 'rails', '4.2.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -71,4 +71,4 @@ gem 'spree_product_zoom', :git => 'git://github.com/spree/spree_product_zoom.git
 
 gem 'sitemap_generator', github: "davwood/sitemap_generator"
 
-ruby "2.1.2"
+ruby "2.2.1"
