@@ -21,5 +21,5 @@ production:
   <<: *default
   host: 
   database: app_production
-  username: rails
+  username: deployer
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
