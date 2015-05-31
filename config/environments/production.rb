@@ -1,6 +1,13 @@
 Rungazella::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.before_configuration do
+    env_file = File.join(Rails.root, 'config', 'local_env.yml')
+    YAML.load(File.open(env_file)).each do |key, value|
+      ENV[key.to_s] = value
+    end if File.exists?(env_file)
+  end
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
