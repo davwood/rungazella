@@ -20,6 +20,6 @@ test:
 production:
   <<: *default
   host: 
-  database: rungazella_production
+  database: app_production
   username: rails
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
