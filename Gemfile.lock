@@ -438,7 +438,7 @@ DEPENDENCIES
   spree_product_zoom!
   turbolinks
   uglifier (>= 1.3.0)
-  unicorn (~> 4.8.3)
+  unicorn
 
 BUNDLED WITH
    1.10.0
