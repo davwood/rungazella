@@ -40,6 +40,12 @@ group :development, :test do
   gem 'dotenv', '~> 0.11.1'
 end
 
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
