@@ -66,7 +66,7 @@ set :user, 'root'
 set :deploy_via, :remote_cache
 set :use_sudo, true
 
-server '45.55.216.85',
+server '104.131.71.59',
   roles: [:web, :app, :db],
   port: fetch(:port),
   user: fetch(:user),
