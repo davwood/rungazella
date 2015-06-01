@@ -62,7 +62,7 @@
 
 
 set :port, 1026
-set :user, 'deployer'
+set :user, 'root'
 set :deploy_via, :remote_cache
 set :use_sudo, true
 
@@ -72,12 +72,12 @@ server '45.55.216.85',
   user: fetch(:user),
   primary: true
 
-set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+set :deploy_to, "/home/rails"
 
 set :ssh_options, {
   forward_agent: true,
   auth_methods: %w(publickey),
-  user: 'deployer',
+  user: 'root',
 }
 
 set :rails_env, :production

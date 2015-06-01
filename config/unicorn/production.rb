@@ -1,4 +1,4 @@
-root = "/home/deployer/apps/rungazella/current"
+root = "/home/rails/current"
 working_directory root
 
 pid "#{root}/tmp/pids/unicorn.pid"
