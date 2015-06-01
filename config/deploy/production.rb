@@ -61,7 +61,7 @@
 #   }
 
 
-set :port, 1026
+set :port, 22
 set :user, 'root'
 set :deploy_via, :remote_cache
 set :use_sudo, true
