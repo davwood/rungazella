@@ -1,16 +1,16 @@
 root = "/home/rungazella/www/rungazella"
-working_directory root << '/current'
+working_directory = root << '/current'
 
 pid "#{root}/tmp/pids/unicorn.pid"
+listen "#{root}/tmp/unicorn.spui.sock", backlog: 64
 
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
+
 worker_processes 3
 timeout 30
 preload_app true
-
-listen '/tmp/unicorn.spui.sock', backlog: 64
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
