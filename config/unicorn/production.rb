@@ -1,5 +1,5 @@
 root = "/home/rungazella/www/rungazella"
-working_directory root
+working_directory root << '/current'
 
 pid "#{root}/tmp/pids/unicorn.pid"
 
