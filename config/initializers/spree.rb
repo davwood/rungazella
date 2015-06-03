@@ -13,7 +13,8 @@ Spree.config do |config|
   	config.logo = "store/rungazella.png"
 
   	#initial setup
-  	config.allow_ssl_in_production = true
+  	# config.allow_ssl_in_production = true
+  	config.allow_ssl_in_production = false
 
   	#S3 configuration
  	if Rails.env.production? then
