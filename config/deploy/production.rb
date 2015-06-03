@@ -62,7 +62,7 @@
 
 
 set :port, 22
-set :user, 'root'
+set :user, 'rungazella'
 set :deploy_via, :remote_cache
 set :use_sudo, true
 
@@ -72,7 +72,7 @@ server '104.131.71.59',
   user: fetch(:user),
   primary: true
 
-set :deploy_to, "/home/rails"
+set :deploy_to, "/home/rungazella/www/rungazella"
 
 set :ssh_options, {
   forward_agent: true,

@@ -19,6 +19,7 @@
 /public/spree/products
 /public/ckeditor_assets
 /public/assets/blog_entry_images
+#/config/database.yml
 /config/local_env.yml
 .env
 
