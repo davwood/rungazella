@@ -2,7 +2,7 @@ root = "/home/rungazella/www/rungazella"
 working_directory = root << '/current'
 
 pid "#{root}/tmp/pids/unicorn.pid"
-listen "#{root}/tmp/unicorn.spui.sock", backlog: 64
+listen "#{root}/tmp/sockets/unicorn.spui.sock", backlog: 64
 
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
