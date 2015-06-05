@@ -3,12 +3,12 @@ class Ckeditor::AttachmentFile < Ckeditor::Asset
    s3_credentials: {
 		  access_key_id: ENV["S3_KEY"],
 		  secret_access_key: ENV["S3_SECRET"],
-		  bucket: "rungazella-dev",
+		  bucket: "rungazella",
 		},
 	storage: :s3,
 	s3_headers:     { "Cache-Control" => "max-age=31557600" },
 	s3_protocol:    "https",
-	bucket:         "rungazella-dev",
+	bucket:         "rungazella",
     path: "/:class/:attachment/:id/:style/:basename.:extension",
 	default_url:   "/:class/:attachment/:id/:style/:basename.:extension"
 
