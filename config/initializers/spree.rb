@@ -23,13 +23,13 @@ Spree.config do |config|
 	s3_credentials: {
 	  access_key_id: ENV["S3_KEY"],
 	  secret_access_key: ENV["S3_SECRET"],
-	  bucket: 'rungazella-not-exist',
+	  # bucket: 'rungazella-not-exist',
 	},
 
 	storage:        :s3,
 	s3_headers:     { "Cache-Control" => "max-age=31557600" },
 	s3_protocol:    "https",
-	bucket:         'rungazella-not-exist-2',
+	bucket:         ENV["S3_BUCKET"],
 
 	url: 					 ":s3_domain_url",
 	
