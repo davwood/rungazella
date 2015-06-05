@@ -31,6 +31,8 @@ Spree.config do |config|
 	s3_protocol:    "https",
 	bucket:         'rungazella',
 
+	url: 					 ":s3_domain_url",
+	
 	path:          "/:class/:attachment/:id/:style/:basename.:extension",
 	default_url:   "/:class/:attachment/:id/:style/:basename.:extension",
 	default_style: "product",
