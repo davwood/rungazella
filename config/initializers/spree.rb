@@ -16,6 +16,9 @@ Spree.config do |config|
 	config.allow_ssl_in_production = true
 	# config.allow_ssl_in_production = false
 
+	#default country is USA
+	config.default_country_id = 507
+
 	#S3 configuration
 		#production. Store images on S3.
 		# development will default to local storage
