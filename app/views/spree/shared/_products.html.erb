@@ -27,7 +27,7 @@
     <div id="products" class="row" data-hook>
       <h3>Running Costume Packages</h3>
       <% packages.each do |product| %>
-        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+        <div id="product_<%= product.id %>" class="col-lg-3 col-md-4 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
           <div class="panel panel-primary">
             <div class="panel-body text-center product-body">
               <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
@@ -46,7 +46,7 @@
     <div id="products" class="row" data-hook>
       <h3>Race Legs</h3>
       <% racelegs.each do |product| %>
-        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+        <div id="product_<%= product.id %>" class="col-lg-3 col-md-4 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
           <div class="panel panel-primary">
             <div class="panel-body text-center product-body">
               <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
@@ -65,7 +65,7 @@
     <div id="products" class="row" data-hook>
       <h3>Running Costume Pieces also sold separately</h3>
       <% individual.each do |product| %>
-        <div id="product_<%= product.id %>" class="col-md-3 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+        <div id="product_<%= product.id %>" class="col-lg-3 col-md-4 col-sm-6" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
           <div class="panel panel-primary">
             <div class="panel-body text-center product-body">
               <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %><br/><br/>
