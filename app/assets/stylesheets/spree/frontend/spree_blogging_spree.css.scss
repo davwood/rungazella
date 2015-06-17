@@ -40,7 +40,8 @@ line-height: 36px;
 
 ul#blog_entry_entries {
   list-style: none;
-
+  margin-left: 0;
+  padding-left: 0;
   li { margin-bottom: 20px; }
 }
 
@@ -62,7 +63,6 @@ ul#blog_entry_entries {
   .blog_entry_date {
     font-style: italic;
     font-size: 80%;
-    margin-left: 10px;
   }
 }
 
