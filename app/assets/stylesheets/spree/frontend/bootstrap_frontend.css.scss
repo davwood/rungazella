@@ -59,7 +59,9 @@ $panel-primary-heading-bg:    $brand-primary !default;
   #logo {
     margin-bottom: 5px;
     img {
-      width: 306px;
+      max-width: 100%;
+      height: auto; 
+      display: block; 
     }
   }
   .nav a {
